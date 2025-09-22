@@ -1,12 +1,12 @@
 import HeaderNav from './HeaderNav';
-
+import './index.css'
 function Header(props) {
   return (
     <header>
         
        <h1 className="title">{props.title}</h1>
       
-      <hr />
+      
       <HeaderNav/>
     </header>
     

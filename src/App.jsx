@@ -3,6 +3,7 @@ import Header from './header'
 import Footer from './Footer'
 import Cursor from './Cursor'
 import './index.css';
+import Particles from './Backgrounds/Particle'
 import { HomeContent, AboutContent, GitHubContent, LinkedInContent } from "./AnimationContent";
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -12,16 +13,25 @@ import About from "./pages/About";
 </Routes>
 function App()
 {
-    return(<>
+    return(
+    <div className="Body">
+    <Particles/>
     <Cursor />
         <BrowserRouter>
-      <Header title="Navanshu Surve"/>  
+      <Header title="Navanshu Surve"/> 
+      <div className="Router-Content">
       <Routes>
-        <Route path="/" element={<HomeContent />} />
-        <Route path="/about" element={<AboutContent />} />
+        <Route path="/" element={<Home/>} />
+        <Route path="/about" element={<About/>} />
       </Routes>
+      
+      </div>
+      
+      
+      <Footer/>
     </BrowserRouter>
-    </>
+    
+    </div>
          
         
 )

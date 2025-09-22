@@ -6,7 +6,7 @@ const containerRef = useRef(null);
 
 return (
   <div ref={containerRef} style={{ height: '300px', overflow: 'hidden' }}>
-    <Crosshair color='#26ee0fff'/> 
+    <Crosshair color='#fbfdfbff'/> 
   </div>
 )
 };

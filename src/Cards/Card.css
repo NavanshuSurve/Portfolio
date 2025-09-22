@@ -1,0 +1,44 @@
+/* Styles for the main card container */
+.Card {
+    /* Layout and Centering */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 300px; /* Fixed width for a consistent look */
+    padding: 20px;
+    
+    /* Appearance */
+    background-color: #ffffff; /* White background */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    
+    /* Spacing */
+    margin: 50px auto; /* Centers the card horizontally and adds top/bottom margin */
+}
+
+/* Styles for the profile image */
+.Card img {
+    width: 150px; /* Fixed size for the image */
+    height: 150px;
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    border: 3px solid #646cff; /* A colored border around the image */
+    margin-bottom: 20px;
+}
+
+/* Styles for the profile name heading */
+.profile-name {
+    font-size: 1.8rem;
+    color: #333; /* Dark text for readability */
+    margin: 0;
+    margin-bottom: 5px;
+}
+
+/* Styles for the bio paragraph */
+.Card p {
+    font-size: 1rem;
+    color: #666; /* Slightly lighter text for the bio */
+    line-height: 1.5;
+    margin: 0;
+}
