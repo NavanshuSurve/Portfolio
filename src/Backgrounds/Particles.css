@@ -1,5 +1,5 @@
 .particles-container {
-  background-color: rgb(0, 119, 153);
+  background-image:radial-gradient(#480048,#C04848) ;
   z-index:-100;
   position: fixed;
   width: 100%;

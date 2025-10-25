@@ -1,0 +1,137 @@
+/* --- 1. Root Variables for Red/Black Theme --- */
+:root {
+    --color-background: #121212; /* Deep Black/Dark Grey */
+    --color-text-primary: #ffffff; /* Pure White Text */
+    --color-text-secondary: #aaaaaa; /* Light Grey Subtext */
+    --color-accent: #ff0000; /* Vibrant Red Accent */
+    --color-section-bg: #1a1a1a; /* Slightly lighter background for contrast */
+}
+
+/* Apply styles to the main container */
+.contact-page-container {
+    padding: 4rem 2rem;
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+    min-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* --- 2. Headings and Subheadings --- */
+.contact-heading {
+    font-size: 3rem;
+    text-align: center;
+    color: var(--color-accent); /* Vibrant Red */
+    margin-bottom: 0.5rem;
+}
+
+.contact-subheading {
+    font-size: 1.1rem;
+    text-align: center;
+    color: var(--color-text-secondary);
+    margin-bottom: 3rem;
+    border-bottom: 1px dashed var(--color-text-secondary);
+    padding-bottom: 1.5rem;
+}
+
+/* Section H2s */
+.contact-page-container h2 {
+    font-size: 1.5rem;
+    color: var(--color-text-primary);
+    border-bottom: 2px solid var(--color-accent);
+    padding-bottom: 5px;
+    margin-bottom: 1.5rem;
+    margin-top: 2rem;
+}
+
+/* --- 3. Contact Details Section --- */
+.details-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    background-color: var(--color-section-bg);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.details-grid p {
+    flex: 1 1 45%; /* Two items per row on desktop */
+    font-size: 1rem;
+}
+
+.contact-link {
+    color: var(--color-accent);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+    color: #ff4d4d; /* Lighter red on hover */
+    text-decoration: underline;
+}
+
+/* --- 4. Contact Form Styling --- */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: var(--color-section-bg);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.form-input, .form-textarea {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid var(--color-text-secondary);
+    border-radius: 5px;
+    background-color: #2a2a2a; /* Darker input background */
+    color: var(--color-text-primary);
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-input:focus, .form-textarea:focus {
+    outline: none;
+    border-color: var(--color-accent); /* Red focus highlight */
+}
+
+.form-textarea {
+    resize: vertical;
+}
+
+.form-submit-btn {
+    padding: 15px 25px;
+    background-color: var(--color-accent);
+    color: var(--color-background);
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    letter-spacing: 1px;
+}
+
+.form-submit-btn:hover {
+    background-color: #cc0000; /* Darker red on hover */
+    transform: translateY(-2px);
+}
+
+/* --- 5. Mobile Responsiveness --- */
+@media (max-width: 600px) {
+    .contact-page-container {
+        padding: 2rem 1rem;
+    }
+
+    .contact-heading {
+        font-size: 2.5rem;
+    }
+
+    .details-grid p {
+        flex: 1 1 100%; /* Single item per row on mobile */
+    }
+}

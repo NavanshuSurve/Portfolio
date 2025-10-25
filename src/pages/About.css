@@ -1,0 +1,107 @@
+/* --- 1. Root Variables for Red/Black Theme --- */
+:root {
+    --color-background: #121212; /* Deep Black/Dark Grey */
+    --color-text-primary: #ffffff; /* Pure White Text */
+    --color-text-secondary: #aaaaaa; /* Light Grey Subtext */
+    --color-accent: #ff0000; /* Vibrant Red Accent */
+    --color-section-bg: #1a1a1a; /* Slightly lighter background for contrast */
+}
+
+/* Apply styles to the main container */
+.about-page-container {
+    padding: 4rem 2rem;
+    background-color: var(--color-background);
+    min-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    
+    /* Grid/Flex for two-column layout */
+    display: flex;
+    gap: 40px;
+    align-items: flex-start; /* Align content to the top */
+}
+
+/* --- 2. Profile Card Wrapper (Left Column) --- */
+.card-wrapper {
+    flex: 0 0 350px; /* Fixed width for the card (adjust as needed for your Card component size) */
+    position: sticky; /* Keep the card visible when scrolling (optional) */
+    top: 2rem; 
+}
+
+/* --- 3. About Content (Right Column) --- */
+.about-content {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: var(--color-section-bg);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
+}
+
+.about-heading {
+    font-size: 2.5rem;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    border-bottom: 3px solid var(--color-text-primary);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.about-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--color-text-primary);
+    margin-bottom: 30px;
+}
+
+.about-details h3 {
+    font-size: 1.5rem;
+    color: var(--color-text-primary);
+    margin-bottom: 15px;
+    border-left: 4px solid var(--color-accent);
+    padding-left: 10px;
+}
+
+.about-details ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.about-details li {
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.bullet-point {
+    height: 8px;
+    width: 8px;
+    background-color: var(--color-accent);
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 15px;
+    box-shadow: 0 0 5px var(--color-accent); /* Flashy glow */
+}
+
+/* --- 4. Mobile Responsiveness --- */
+@media (max-width: 900px) {
+    .about-page-container {
+        flex-direction: column; /* Stack columns vertically on mobile */
+        align-items: center;
+        padding: 2rem 1rem;
+    }
+    
+    .card-wrapper {
+        position: static; /* Remove sticky behavior */
+        margin-bottom: 30px;
+        width: 100%;
+        max-width: 350px; /* Keep card contained */
+    }
+
+    .about-content {
+        padding: 20px 15px;
+        width: 100%;
+    }
+}

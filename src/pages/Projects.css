@@ -1,0 +1,153 @@
+/* --- 1. Root Variables for Color Theme (Red/Black) --- */
+:root {
+    --color-background: #121212; /* Deep Black/Dark Grey */
+    --color-text-primary: #ffffff; /* Pure White Text */
+    --color-text-secondary: #aaaaaa; /* Light Grey Subtext */
+    --color-accent: #ff0000; /* Vibrant Red Accent */
+    
+    /* Secondary/Tertiary accents for the dynamic card borders */
+    --color-accent-1: #ff0000; /* Red */
+    --color-accent-2: #ff4d4d; /* Slightly Lighter Red */
+    --color-accent-3: #8b0000; /* Darker Red */
+    --color-accent-4: #cc0000; /* Muted Red */
+    
+    --color-card-bg: #1a1a1a;
+}
+
+/* Apply basic styles to the main container */
+.projects-container {
+    padding: 4rem 2rem;
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+    min-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* --- 2. Heading and Titles --- */
+.projects-heading {
+    font-size: 3.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--color-text-primary);
+    text-shadow: 0 0 15px var(--color-accent); /* Flashy red glow effect */
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+/* --- 3. Projects Grid Layout --- */
+.projects-grid {
+    display: grid;
+    /* Responsive grid: 2 columns on desktop, 1 on mobile */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- 4. Project Card Styling --- */
+.project-card {
+    background-color: var(--color-card-bg);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex; /* Ensures content fills card height */
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-8px); /* More pronounced lift on hover */
+    box-shadow: 0 15px 35px rgba(255, 0, 0, 0.3); /* Red shadow on hover */
+}
+
+.project-title {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: var(--color-text-primary);
+    border-bottom: 1px dashed var(--color-text-secondary);
+    padding-bottom: 5px;
+}
+
+.project-tag {
+    display: inline-block;
+    background-color: var(--color-accent);
+    color: var(--color-background);
+    padding: 4px 10px;
+    border-radius: 3px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.project-description {
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin-bottom: 25px;
+    flex-grow: 1; /* Pushes the actions to the bottom */
+}
+
+/* --- 5. Buttons and Actions --- */
+.project-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: auto; 
+}
+
+.btn-live, .btn-code {
+    padding: 12px 22px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.btn-live {
+    background-color: var(--color-accent); /* Vibrant Red */
+    color: var(--color-background);
+}
+
+.btn-live:hover {
+    background-color: #cc0000; /* Darker Red */
+    box-shadow: 0 0 10px var(--color-accent);
+}
+
+.btn-code {
+    background-color: var(--color-text-secondary); /* Grey */
+    color: var(--color-background);
+}
+
+.btn-code:hover {
+    background-color: #888888; /* Lighter Grey */
+}
+
+/* --- 6. Footer Text --- */
+.projects-footer {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 1.1rem;
+    color: var(--color-text-secondary);
+}
+
+/* --- 7. Mobile Responsiveness --- */
+@media (max-width: 768px) {
+    .projects-container {
+        padding: 2rem 1rem;
+    }
+
+    .projects-heading {
+        font-size: 2.5rem;
+    }
+    
+    .project-actions {
+        flex-direction: column; /* Stack buttons on small screens */
+    }
+
+    .btn-live, .btn-code {
+        width: 100%;
+    }
+}

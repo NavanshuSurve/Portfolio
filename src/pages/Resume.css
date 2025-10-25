@@ -1,0 +1,137 @@
+/* --- 1. Root Variables for Red/Black Theme --- */
+:root {
+    --color-background: #121212; /* Deep Black/Dark Grey */
+    --color-text-primary: #ffffff; /* Pure White Text */
+    --color-text-secondary: #aaaaaa; /* Light Grey Subtext */
+    --color-accent: #ff0000; /* Vibrant Red Accent */
+    --color-section-bg: #1a1a1a; /* Slightly lighter background for contrast */
+}
+
+/* Apply styles to the main container */
+.resume-page-container {
+    padding: 3rem 2rem;
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+    min-height: 100vh;
+    font-family: 'Montserrat', sans-serif; /* Use a clean, modern font */
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* --- 2. Header and Contact Info --- */
+.resume-header {
+    text-align: center;
+    border-bottom: 3px solid var(--color-accent);
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+}
+
+.name-heading {
+    font-size: 3rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--color-accent);
+}
+
+.contact-info {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+}
+
+/* --- 3. Section Headings and Layout --- */
+.section-block {
+    margin-bottom: 3rem;
+    padding-left: 15px;
+    border-left: 4px solid var(--color-accent); /* Vertical Red Line */
+}
+
+.section-block h2 {
+    font-size: 1.8rem;
+    color: var(--color-text-primary);
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* --- 4. Content Items (Experience/Education/Projects) --- */
+.content-item {
+    background-color: var(--color-section-bg);
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.item-title {
+    font-size: 1.2rem;
+    color: var(--color-accent); /* Red title */
+    margin-bottom: 5px;
+}
+
+.item-subtitle {
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--color-text-primary);
+    margin-bottom: 5px;
+}
+
+.item-dates, .project-date {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    font-style: italic;
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* List/Bullet Points */
+.content-item ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 10px;
+}
+
+.content-item li {
+    position: relative;
+    margin-bottom: 8px;
+    padding-left: 15px;
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+}
+
+.content-item li::before {
+    content: "•";
+    color: var(--color-accent); /* Red bullet points */
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+/* --- 5. Skills Grid --- */
+.skills-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px 20px;
+    background-color: var(--color-section-bg);
+    border-radius: 5px;
+}
+
+.skills-grid strong {
+    color: var(--color-accent);
+}
+
+/* --- 6. Mobile Responsiveness --- */
+@media (max-width: 600px) {
+    .resume-page-container {
+        padding: 1.5rem 1rem;
+    }
+
+    .name-heading {
+        font-size: 2.2rem;
+    }
+
+    .section-block h2 {
+        font-size: 1.5rem;
+    }
+}
