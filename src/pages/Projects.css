@@ -1,153 +1,293 @@
-/* --- 1. Root Variables for Color Theme (Red/Black) --- */
+/* Projects Page Styles - Red Gradient Theme */
+
 :root {
-    --color-background: #121212; /* Deep Black/Dark Grey */
-    --color-text-primary: #ffffff; /* Pure White Text */
-    --color-text-secondary: #aaaaaa; /* Light Grey Subtext */
-    --color-accent: #ff0000; /* Vibrant Red Accent */
-    
-    /* Secondary/Tertiary accents for the dynamic card borders */
-    --color-accent-1: #ff0000; /* Red */
-    --color-accent-2: #ff4d4d; /* Slightly Lighter Red */
-    --color-accent-3: #8b0000; /* Darker Red */
-    --color-accent-4: #cc0000; /* Muted Red */
-    
-    --color-card-bg: #1a1a1a;
+    --color-accent-1: #eb3349;
+    --color-accent-2: #f45c43;
+    --color-accent-3: #ff6b6b;
+    --color-accent-4: #ee5a6f;
 }
 
-/* Apply basic styles to the main container */
 .projects-container {
-    padding: 4rem 2rem;
-    background-color: var(--color-background);
-    color: var(--color-text-primary);
     min-height: 100vh;
-    font-family: 'Montserrat', sans-serif;
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    color: #ffffff;
 }
 
-/* --- 2. Heading and Titles --- */
 .projects-heading {
-    font-size: 3.5rem;
+    font-size: 3rem;
+    font-weight: 800;
     text-align: center;
     margin-bottom: 3rem;
-    color: var(--color-text-primary);
-    text-shadow: 0 0 15px var(--color-accent); /* Flashy red glow effect */
-    letter-spacing: 3px;
-    text-transform: uppercase;
+    background: linear-gradient(to right, #eb3349, #f45c43);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: fadeInDown 0.8s ease;
+    letter-spacing: -1px;
 }
 
-/* --- 3. Projects Grid Layout --- */
 .projects-grid {
-    display: grid;
-    /* Responsive grid: 2 columns on desktop, 1 on mobile */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 3rem;
 }
 
-/* --- 4. Project Card Styling --- */
 .project-card {
-    background-color: var(--color-card-bg);
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); 
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex; /* Ensures content fills card height */
-    flex-direction: column;
+    background: #1a1a1a;
+    border-radius: 16px;
+    padding: 2.5rem;
+    border: 2px solid #2a2a2a;
+    border-top: 5px solid var(--color-accent-1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    animation: fadeInUp 0.8s ease backwards;
+}
+
+.project-card:nth-child(1) { animation-delay: 0.1s; }
+.project-card:nth-child(2) { animation-delay: 0.2s; }
+.project-card:nth-child(3) { animation-delay: 0.3s; }
+
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(235, 51, 73, 0.1) 0%, rgba(244, 92, 67, 0.1) 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
 }
 
 .project-card:hover {
-    transform: translateY(-8px); /* More pronounced lift on hover */
-    box-shadow: 0 15px 35px rgba(255, 0, 0, 0.3); /* Red shadow on hover */
+    transform: translateY(-12px);
+    border-color: #eb3349;
+    box-shadow: 0 25px 50px rgba(235, 51, 73, 0.4);
+}
+
+.project-card:hover::before {
+    opacity: 1;
 }
 
 .project-title {
     font-size: 1.8rem;
-    margin-bottom: 10px;
-    color: var(--color-text-primary);
-    border-bottom: 1px dashed var(--color-text-secondary);
-    padding-bottom: 5px;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #ffffff;
+    position: relative;
+    z-index: 1;
+    transition: color 0.3s ease;
+}
+
+.project-card:hover .project-title {
+    background: linear-gradient(to right, #eb3349, #f45c43);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .project-tag {
+    font-size: 0.9rem;
+    color: #f45c43;
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+    padding: 0.5rem 1rem;
+    background: rgba(244, 92, 67, 0.1);
+    border-radius: 20px;
     display: inline-block;
-    background-color: var(--color-accent);
-    color: var(--color-background);
-    padding: 4px 10px;
-    border-radius: 3px;
-    font-size: 0.85rem;
-    font-weight: bold;
-    margin-bottom: 15px;
-    text-transform: uppercase;
+    border: 1px solid rgba(244, 92, 67, 0.3);
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+.project-card:hover .project-tag {
+    background: rgba(244, 92, 67, 0.2);
+    border-color: #f45c43;
+    transform: scale(1.05);
 }
 
 .project-description {
     font-size: 1rem;
-    color: var(--color-text-secondary);
-    line-height: 1.6;
-    margin-bottom: 25px;
-    flex-grow: 1; /* Pushes the actions to the bottom */
+    line-height: 1.7;
+    color: linear-gradient(#f45c43,#eb3349);
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 1;
+    transition: color 0.3s ease;
 }
 
-/* --- 5. Buttons and Actions --- */
+.project-card:hover .project-description {
+    color: linear-gradient(#f45c43,#eb3349);
+}
+
 .project-actions {
     display: flex;
-    gap: 15px;
-    margin-top: auto; 
+    gap: 1rem;
+    position: relative;
+    z-index: 1;
 }
 
-.btn-live, .btn-code {
-    padding: 12px 22px;
+.project-actions button {
+    flex: 1;
+    padding: 0.9rem 1.5rem;
+    font-size: 0.95rem;
+    font-weight: 700;
     border: none;
-    border-radius: 5px;
-    font-weight: bold;
+    border-radius: 10px;
     cursor: pointer;
     transition: all 0.3s ease;
     text-transform: uppercase;
-    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-actions button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%);
+    transition: width 0.5s ease, height 0.5s ease;
+}
+
+.project-actions button:hover::before {
+    width: 300px;
+    height: 300px;
 }
 
 .btn-live {
-    background-color: var(--color-accent); /* Vibrant Red */
-    color: var(--color-background);
+    background: linear-gradient(to right, #eb3349, #f45c43);
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(235, 51, 73, 0.3);
 }
 
 .btn-live:hover {
-    background-color: #cc0000; /* Darker Red */
-    box-shadow: 0 0 10px var(--color-accent);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(235, 51, 73, 0.5);
 }
 
 .btn-code {
-    background-color: var(--color-text-secondary); /* Grey */
-    color: var(--color-background);
+    background: transparent;
+    color: #f45c43;
+    border: 2px solid #f45c43;
 }
 
 .btn-code:hover {
-    background-color: #888888; /* Lighter Grey */
+    background: #f45c43;
+    color: linear-gradient(#f45c43,#eb3349);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(244, 92, 67, 0.4);
 }
 
-/* --- 6. Footer Text --- */
 .projects-footer {
     text-align: center;
-    margin-top: 50px;
-    font-size: 1.1rem;
-    color: var(--color-text-secondary);
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-top: 3rem;
+    animation: fadeIn 1s ease 0.6s backwards;
+    background: linear-gradient(to right, #eb3349, #f45c43);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
-/* --- 7. Mobile Responsiveness --- */
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+}
+
 @media (max-width: 768px) {
+    .projects-heading {
+        font-size: 2.2rem;
+    }
+    
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
     .projects-container {
         padding: 2rem 1rem;
     }
-
-    .projects-heading {
-        font-size: 2.5rem;
+    
+    .project-card {
+        padding: 2rem 1.5rem;
+    }
+    
+    .project-title {
+        font-size: 1.5rem;
     }
     
     .project-actions {
-        flex-direction: column; /* Stack buttons on small screens */
+        flex-direction: column;
     }
-
-    .btn-live, .btn-code {
+    
+    .project-actions button {
         width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .projects-heading {
+        font-size: 1.8rem;
+    }
+    
+    .project-title {
+        font-size: 1.3rem;
+    }
+    
+    .project-description {
+        font-size: 0.95rem;
+    }
+    
+    .project-card {
+        padding: 1.5rem;
     }
 }
